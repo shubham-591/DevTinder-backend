@@ -7,7 +7,7 @@ const authMiddleware = async (req, res, next) => {
             // throw new Error("Token is not valid");
             return res.status(401).send("Please Login");
         }
-        const decoded = jwt.verify(token, "mySecretKey");
+        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
         const { _id } = decoded;
         const user = await User.findById(_id);
 
