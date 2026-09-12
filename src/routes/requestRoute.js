@@ -49,8 +49,8 @@ router.post("/request/send/:status/:toUserId", authMiddleware, async (req, res) 
 
         const data = await connectionRequest.save();
 
-        const emailRes = await sendEmail.run();
-        console.log(emailRes);
+        // const emailRes = await sendEmail.run();
+        // console.log(emailRes);
         
 
         res.status(200).json({

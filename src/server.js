@@ -8,6 +8,7 @@ const requestRoute = require("./routes/requestRoute");
 const userRoute = require("./routes/userRoute");
 const cors = require("cors"); 
 
+require("./utils/cronjob");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
