@@ -6,6 +6,7 @@ const authRoute = require("./routes/authRoute");
 const profileRoute = require("./routes/profileRoute");
 const requestRoute = require("./routes/requestRoute");
 const userRoute = require("./routes/userRoute");
+const paymentRoute = require("./routes/paymentRoute");
 const cors = require("cors"); 
 
 require("./utils/cronjob");
@@ -17,13 +18,17 @@ app.use(cors({
     origin: "http://localhost:5173",
     credentials: true,
 }));
-app.use(express.json()); // Middleware to parse JSON bodies
+// app.use("/", paymentRoute);
+
 app.use(cookieParser());
+// app.use("/", paymentRoute);
+app.use(express.json()); // Middleware to parse JSON bodies
 
 app.use("/", authRoute);
 app.use("/", profileRoute);
 app.use("/", requestRoute);
-app.use("/", userRoute)
+app.use("/", userRoute);
+app.use("/", paymentRoute);
 
 
 connectDB()

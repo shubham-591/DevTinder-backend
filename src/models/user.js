@@ -49,6 +49,13 @@ const userSchema = new mongoose.Schema({
         // },
         required: true
     },
+    isPremium: {
+        type: Boolean,
+        default: false
+    },
+    membershipType: {
+        type: String,  
+    },
     photoUrl: {
         type: String,
         // default: "https://api.dicebear.com/10.x/lorelei/svg?seed=default",
