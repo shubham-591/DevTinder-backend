@@ -24,6 +24,7 @@ const initializeSocket = (server) => {
             // console.log("Online users map :", onlineUsers);
 
             // console.log("User online:", userId);
+            socket.join(userId);
 
             // io.emit("userOnline", userId);
             // Tell this newly connected user who is already online

@@ -53,7 +53,7 @@ const createRequestRouter = (io) => {
 
             const data = await connectionRequest.save();
 
-            io.to(toUserId.toString()).emit("connectionRequestReceived", {
+            io.to(toUserId).emit("connectionRequestReceived", {
                 fromUserId: fromUserId.toString(),
             });
 
